@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .accuracy {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .confusion-matrix img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Classification Results</h1>
+        <p class="accuracy">Accuracy: {{ accuracy * 100 }}%</p>
+        
+        <h2>Confusion Matrix:</h2>
+        <div class="confusion-matrix">
+            <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="Confusion Matrix">
+        </div>
+        
+        <a href="{{ url_for('index') }}">
+            <button>Go Back</button>
+        </a>
+    </div>
+</body>
+</html>
